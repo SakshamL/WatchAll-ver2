@@ -33,10 +33,12 @@
 .header > ul > li {
   padding: 0 15px;
   cursor: pointer;
+  transition: 0.2s all ease;
 }
 
 .header > ul > li:hover {
-  color: #b100006e;
+  color: #b10000b6;
+  transition: 0.2s all ease;
 }
 
 .header > ul > li:not(:last-child) {

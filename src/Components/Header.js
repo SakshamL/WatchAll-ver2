@@ -16,11 +16,7 @@ function Header() {
           <li>TV Shows</li>
           <li>Favourites</li>
         </ul>
-        <img
-          className="avatar"
-          src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
-          alt="avatar"
-        />
+        <img className="avatar" src="/images/avatar.png" alt="avatar" />
       </div>
     </>
   );
