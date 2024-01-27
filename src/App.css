@@ -8,8 +8,8 @@ body {
 .app-body {
   position: absolute;
   width: 90%;
-  height: 96%;
-  bottom: 0;
+  height: fit-content;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: #252525;
