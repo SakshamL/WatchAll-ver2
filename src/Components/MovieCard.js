@@ -1,64 +1,31 @@
 import React from "react";
 import "./MovieCard.css";
+const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 
-function MovieCard() {
+const MovieCard = (props) => {
   return (
-    <>
-      <div className="content-row">
-        <div className="content-container">
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/fighter.jpg"
-              alt="poster"
-            />
-            <span>Fighter</span>
-          </div>
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/shaitaan.jpg"
-              alt="poster"
-            />
-            <span>Shaitaan</span>
-          </div>
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/Jai-Hanuman.jpeg"
-              alt="poster"
-            />
-            <span>Hanu-Man</span>
-          </div>
-
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/Hero-Heeroine.jpg"
-              alt="poster"
-            />
-            <span>Hero-Heroine</span>
-          </div>
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/12th fail.jpg"
-              alt="poster"
-            />
-            <span>12th Fail</span>
-          </div>
-          <div className="poster-container">
-            <img
-              className="poster-img"
-              src="/images/fighter.jpg"
-              alt="poster"
-            />
-            <span>Fighter</span>
-          </div>
-        </div>
+    <div className="content-row">
+      <div className="content-container">
+        {props.movie.map((movie_data, index) => {
+          if (movie_data.poster_path !== null) {
+            return (
+              <div key={index} className="poster-container">
+                <img
+                  className="poster-img"
+                  src={IMGPATH + movie_data.poster_path}
+                  alt="poster"
+                />
+                <span>{movie_data.title}</span>
+                <h3 className="origin_lang">{movie_data.original_language}</h3>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default MovieCard;
