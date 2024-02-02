@@ -19,7 +19,19 @@ function App() {
     const responseJSON = await response.json();
     // console.log(responseJSON.results);
 
-    setmovies(responseJSON.results);
+    const sortedarray = responseJSON.results.sort((a, b) => {
+      const dateA = new Date(a.release_date);
+      const dateB = new Date(b.release_date);
+      if (dateA < dateB) {
+        return -1;
+      }
+      return true;
+    });
+    // for (let i = 0; i < sortedarray.length; i++) {
+    //   console.log(sortedarray[i].title);
+    //   console.log(sortedarray[i].release_date);
+    // }
+    setmovies(sortedarray);
   };
 
   return (
@@ -27,7 +39,7 @@ function App() {
       <div className="app-body">
         <Header />
         <HeroSlider />
-        <RowHeading title="Latest & Upcoming Movies" />
+        <RowHeading title="2024 Latest & Upcoming Movies" />
         <MovieCard movie={movies} />
 
         <RowHeading title="Latest TV Shows" />

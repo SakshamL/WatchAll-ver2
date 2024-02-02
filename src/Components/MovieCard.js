@@ -16,7 +16,7 @@ const MovieCard = (props) => {
                   alt="poster"
                 />
                 <span>{movie_data.title}</span>
-                <h3 className="origin_lang">{movie_data.original_language}</h3>
+                <h3 className="origin_lang">{movie_data.release_date}</h3>
               </div>
             );
           } else {
